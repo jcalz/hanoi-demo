@@ -256,6 +256,7 @@ function drawHanoi() {
             .toExponential(2)
             .replace(/e\+(.*)$/, "&times;10<sup>$1</sup>")
         : totalNumMoves.toLocaleString();
+    numMovesDiv.innerHTML = "0 of " + numMovesTot
     for (let theMove of moves) {
         animPromise = animPromise.then(_ => move(stacks[theMove.from], stacks[theMove.to]));
     }
