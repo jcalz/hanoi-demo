@@ -247,7 +247,7 @@ function drawHanoi() {
     const to = stackNums.pop();
     if (typeof from === "undefined" || typeof to === "undefined")
         throw new Error("come on");
-    let animPromise = Promise.resolve();
+    let animPromise = Promise.resolve().then(_ => sleep(secondsPerMove * 2));
     const moves = hanoiMoves(numDiscs > 20 && numPegs === 3 ? 20 : numDiscs, from, to, stackNums);
     let numMovesCur = 0;
     let totalNumMoves = getChunkSizeAndMoveNumbers(numDiscs, numPegs).moves;
